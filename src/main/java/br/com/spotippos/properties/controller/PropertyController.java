@@ -9,6 +9,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +29,7 @@ public class PropertyController {
     private PropertyService service;
 
     @PostMapping
-    public ResponseEntity register(@RequestBody final Property property){
+    public ResponseEntity register(@Valid @RequestBody final Property property){
         property.setProvinces(findProvinces(property.getX(), property.getY()));
         Property newProperty = service.save(property);
 
