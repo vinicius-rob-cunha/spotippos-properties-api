@@ -22,3 +22,8 @@ do SpringBoot.
 
    Isso só não foi feito para demonstrar um pouco mais do processo, caso contrário
 o spring já implementa a maior parte.
+
+# O que ainda poderia ser feito
+
+- Segurança
+- Cache
