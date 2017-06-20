@@ -24,11 +24,13 @@ public class PropertyBuilder {
 
     public PropertyBuilder x(Integer x) {
         property.setX(x);
+        property.setProvinces(Province.findProvinces(x, property.getY()));
         return this;
     }
 
     public PropertyBuilder y(Integer y) {
         property.setY(y);
+        property.setProvinces(Province.findProvinces(property.getX(), y));
         return this;
     }
 
@@ -44,6 +46,11 @@ public class PropertyBuilder {
 
     public PropertyBuilder squareMeters(Integer squareMeters) {
         property.setSquareMeters(squareMeters);
+        return this;
+    }
+
+    public PropertyBuilder price(Long price) {
+        property.setPrice(price);
         return this;
     }
 
