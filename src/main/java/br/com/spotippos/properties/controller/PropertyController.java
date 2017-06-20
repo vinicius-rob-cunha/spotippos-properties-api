@@ -54,7 +54,7 @@ public class PropertyController {
     }
 
     @GetMapping("/advanced")
-    public HttpEntity<PropertiesSearchResult> advancedSearch(@RequestParam final Integer maxPrice, @RequestParam final Integer minPrice,
+    public HttpEntity<PropertiesSearchResult> advancedSearch(@RequestParam final Long maxPrice, @RequestParam final Long minPrice,
                                                              @RequestParam final Integer beds, @RequestParam final Integer baths,
                                                              @RequestParam final String province){
         List<PropertyResource> properties = service.advancedSearch(maxPrice, minPrice, beds, baths, province)

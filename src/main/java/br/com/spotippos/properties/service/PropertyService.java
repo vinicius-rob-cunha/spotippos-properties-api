@@ -39,7 +39,7 @@ public class PropertyService {
     /**
      * @return todos os imoveis que atenda aos critérios de busca
      */
-    public List<Property> advancedSearch(Integer maxPrice, Integer minPrice, Integer beds, Integer baths,
+    public List<Property> advancedSearch(Long maxPrice, Long minPrice, Integer beds, Integer baths,
                                          String province) {
         Predicate query = createAdvancedSearchQuery(maxPrice, minPrice, beds, baths, province);
 
@@ -54,7 +54,7 @@ public class PropertyService {
     /**
      * Monta a query baseado nos parâmetros recebidos
      */
-    private Predicate createAdvancedSearchQuery(Integer maxPrice, Integer minPrice, Integer beds, Integer baths, String province) {
+    private Predicate createAdvancedSearchQuery(Long maxPrice, Long minPrice, Integer beds, Integer baths, String province) {
         QProperty property = QProperty.property;
 
         BooleanBuilder booleanBuilder = new BooleanBuilder();

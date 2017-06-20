@@ -17,9 +17,8 @@ import java.util.Arrays;
 import static org.hamcrest.Matchers.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Matchers.anyString;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.mockito.Matchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -83,7 +82,7 @@ public class PropertyControllerTest {
 
     @Test
     public void deveRetornarAListaDePropriedadesPorBuscaAvancadaComSeusLinks() throws Exception {
-        given(this.service.advancedSearch(anyInt(),anyInt(),anyInt(),anyInt(), anyString())).willReturn(
+        given(this.service.advancedSearch(anyLong(),anyLong(),anyInt(),anyInt(), anyString())).willReturn(
                 Arrays.asList(new PropertyBuilder().build(), new PropertyBuilder().build(), new PropertyBuilder().build())
         );
 
